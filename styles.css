@@ -1,0 +1,54 @@
+*{
+    font-family: "Dank Mono", ui-monospace, monospace;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+    padding-bottom: 3em;
+}
+
+button {
+border: 1px solid rgb(78, 123, 186);
+border-radius: 0.5em;
+font-size: large;
+text-align: center;
+padding: 10px;
+background-color: rgb(78, 123, 186);
+color: whitesmoke;
+margin-top: 50px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    width: fit-content;
+    justify-content: center;
+    border: 1px solid brown;
+}
+
+.btn:hover {
+    transform: translateY(0) scale(1.1);
+}
+
+.square {
+    /* border: 1px solid black; */
+    margin: 0;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 50px
+}

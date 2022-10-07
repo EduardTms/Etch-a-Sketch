@@ -15,40 +15,24 @@ header {
     padding-bottom: 3em;
 }
 
-button {
-border: 1px solid rgb(78, 123, 186);
-border-radius: 0.5em;
-font-size: large;
-text-align: center;
-padding: 10px;
-background-color: rgb(78, 123, 186);
-color: whitesmoke;
-margin-top: 50px;
-}
-
-.main {
+.container {
     display: flex;
     justify-content: center;
-}
-
-.grid {
-    display: grid;
-    width: fit-content;
-    justify-content: center;
-    border: 1px solid brown;
-}
-
-.btn:hover {
-    transform: translateY(0) scale(1.1);
-}
-
-.square {
-    /* border: 1px solid black; */
-    margin: 0;
+    gap: 10px;
 }
 
 .button {
-    display: flex;
+    display: inherit;
+    flex-direction: column;
     justify-content: center;
-    gap: 50px
+}
+
+.sketch {
+    display: grid;
+    width: 400px;
+    height: 400px;
+}
+
+.size {
+    text-align: center;
 }

@@ -1,51 +1,44 @@
-const gridContainer = document.querySelector('.grid');
-const smallBtn = document.querySelector('.small'); 
-const mediumBtn = document.querySelector('.medium'); 
-const largeBtn = document.querySelector('.large'); 
-const newDiv = document.createElement("div");
-newDiv.className = "square";
+const sizeDisplay = document.querySelector('.size');
+let color = 'black';
 
-// creating x by x layout
-const grid = (size) => {
-    gridSize(size);
-    for(i=0; i< size*size; i++) {
-        gridContainer.appendChild(newDiv.cloneNode(true));
+function createGrid(size) {
+    // Set the gridContainer
+    const gridContainer = document.querySelector('.sketch');
+    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`; 
+    gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    // In case of size change in Grid, this removes all the previous squares 
+    let squares = document.querySelectorAll('.square');
+    squares.forEach((div) => div.remove());
+    // Creates new squares
+for(let i=0; i<size*size; i++) {
+    let square = document.createElement('div');
+    square.classList.add('square');
+    square.addEventListener('mouseover', squareColor);
+    gridContainer.appendChild(square);
     }
 }
 
-// giving the little squares a predefined size based on layout size
-const gridSize = (size) => {
-    if(size === 10) {
-        newDiv.style.width = '45px';
-        newDiv.style.height = '45px';
-        gridContainer.style.gridTemplateColumns = `repeat(${size}, 45px)`;
+// Generated gird before user input
+createGrid(16);
+sizeDisplay.textContent = `16x16`;
+
+// user input is max 50 otherwise site lags
+function changeSize(input) {
+    createGrid(input);
+    sizeDisplay.textContent = `${input}x${input}`; 
+}
+
+// function used in createGrid to change the color of the squares
+function squareColor() {
+    if(color === 'rainbow') {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 70%)`;
+    } else {
+        this.style.backgroundColor = color;
     }
-    if (size === 20) {
-        newDiv.style.width = '22.5px';
-        newDiv.style.height = '22.5px';
-        gridContainer.style.gridTemplateColumns = `repeat(${size}, 22.5px)`;
-    } 
-    if (size === 30) {
-        newDiv.style.width = '15px';
-        newDiv.style.height = '15px';
-        gridContainer.style.gridTemplateColumns = `repeat(${size}, 15px)`;
-    }  
-};
+}
 
-grid(10);
+// this just changes the color to the one that the user inputs
+function changeColor(input) {
+    color = input;
+}
 
-// user input on the size of the grid
-smallBtn.addEventListener('click', () => {
-    gridContainer.innerHTML = '';
-    grid(10);
-});
-
-mediumBtn.addEventListener('click', () => {
-    gridContainer.innerHTML = '';
-    grid(20);
-});
-
-largeBtn.addEventListener('click', () => {
-    gridContainer.innerHTML = '';
-    grid(30);
-});

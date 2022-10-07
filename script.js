@@ -22,7 +22,7 @@ for(let i=0; i<size*size; i++) {
 createGrid(16);
 sizeDisplay.textContent = `16x16`;
 
-// user input is max 50 otherwise site lags
+// user input is max 64 otherwise site lags
 function changeSize(input) {
     createGrid(input);
     sizeDisplay.textContent = `${input}x${input}`; 
@@ -42,3 +42,9 @@ function changeColor(input) {
     color = input;
 }
 
+// clear screen
+function clearScreen() {
+    const gridContainer = document.querySelector('.sketch');
+    let squares = gridContainer.querySelectorAll('div');
+    squares.forEach(div => div.style.backgroundColor = 'white')
+}

@@ -5,19 +5,44 @@
 body {
     margin: 0;
     width: 100vw;
+    background-color: #2b2f52;
+    border-radius: 0.5em;
 }
 
 h1 {
     text-align: center;
+    margin: 0;
+    color: whitesmoke;
 }
 
 header {
-    padding-bottom: 3em;
+    padding: 2em;
+    color: black;
+}
+
+button {
+    border: 1px solid rgb(78, 123, 186);
+    border-radius: 0.5em;
+    font-size: large;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(78, 123, 186);
+    color: whitesmoke;
+}
+
+button:hover {
+    transform: scaleX(1.1);
+    background-color: rgb(31, 94, 182);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
 }
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 10px;
 }
 
@@ -31,8 +56,49 @@ header {
     display: grid;
     width: 400px;
     height: 400px;
+    background-color: white;
+    border: 1px solid rgb(31, 94, 182);
 }
 
 .size {
     text-align: center;
 }
+
+.onTopSketch {
+    margin-top: 10%;
+    text-align: center;
+    font-size: xx-large;
+    color:whitesmoke;
+    padding: 20px;
+    background-color: #0055ff;
+    border-radius: 0.5em;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: x-small;
+    }
+
+    .btn {
+        gap: 0px   
+    }
+
+    .button {
+        font-size: small;
+    }
+
+    .sketch {
+        width: 200px;
+        height: 200px;
+    }
+  }
+  

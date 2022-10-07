@@ -11,26 +11,31 @@
     <header>
       <h1>Etch-a-Sketch</h1>
     </header>
-    <div class="main container">
-      <div class="button container">
-        <button onclick="changeColor('black')">Color</button>
-        <button onclick="changeColor('rainbow')">Rainbow</button>
-        <button onclick="changeColor('white')">Erase</button>
-        <button id="clear">Clear</button>
-        <div class="control">
-          <div class="size"></div>
-          <input
-            type="range"
-            min="2"
-            max="50"
-            step="1"
-            onchange="changeSize(this.value)"
-          />
+    <div class="main">
+      <div class="onTopSketch">
+        Board
+        <div class="board container">
+          <div class="button container">
+            <button onclick="changeColor('black')">Color</button>
+            <button onclick="changeColor('rainbow')">Rainbow</button>
+            <button onclick="changeColor('white')">Erase</button>
+            <button onclick="clearScreen()">Clear</button>
+            <div class="control">
+              <div class="size"></div>
+              <input
+                type="range"
+                min="2"
+                max="64"
+                step="1"
+                onchange="changeSize(this.value)"
+              />
+            </div>
+          </div>
+          <div class="sketch"></div>
         </div>
       </div>
-      <div class="sketch"></div>
     </div>
-
+    <footer id="footer">Created by EduardTms</footer>
     <script src="script.js"></script>
   </body>
 </html>
